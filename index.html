@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f9f5e9">
+  <meta name="description" content="An independent Persian learning demo. Learn a few words, try a quiz, and read a short passage.">
+  <title>Roshan | روشن</title>
+  <link rel="icon" type="image/svg+xml" href="./roshan.svg">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#app">Skip to practice</a>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <div class="brand">
+        <img src="./roshan.svg" width="42" height="42" alt="">
+        <div><span class="wordmark">Roshan</span><span class="brand-caption">Persian practice</span></div>
+      </div>
+      <nav class="site-nav" aria-label="Practice sections">
+        <button type="button" data-view="home">Home</button>
+        <button type="button" data-view="study">Study</button>
+        <button type="button" data-view="quiz">Quiz</button>
+        <button type="button" data-view="reading">Reading</button>
+      </nav>
+      <span class="edition"><span class="edition-dot" aria-hidden="true"></span>Public demo</span>
+    </div>
+  </header>
+  <main id="app" tabindex="-1"></main>
+  <noscript><p class="noscript">Roshan needs JavaScript to show the study cards, quiz, and reading practice.</p></noscript>
+  <footer class="site-footer">
+    <span>Roshan <span class="footer-dot" aria-hidden="true">✦</span> Persian practice</span>
+    <span>Independent demo · No account required</span>
+  </footer>
+</body>
+</html>
