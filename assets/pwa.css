@@ -1,0 +1,39 @@
+#roshan-offline { position: relative; min-width: 0; }
+#roshan-offline[hidden], #roshan-offline [hidden] { display: none !important; }
+#roshan-offline > summary {
+  cursor: pointer;
+  padding: .25rem .4rem;
+  border-radius: .35rem;
+  color: inherit;
+  white-space: nowrap;
+  font-size: .85rem;
+}
+#roshan-offline .roshan-offline-panel {
+  position: absolute;
+  inset-inline-end: 0;
+  top: calc(100% + .5rem);
+  z-index: 30;
+  width: min(22rem, calc(100vw - 2rem));
+  max-height: min(75vh, 36rem);
+  overflow: auto;
+  padding: .9rem;
+  background: var(--surface, Canvas);
+  color: var(--text, CanvasText);
+  border: 1px solid var(--line, GrayText);
+  border-radius: .65rem;
+  box-shadow: 0 .6rem 1.75rem rgb(0 0 0 / .28);
+  font-size: .9rem;
+  text-align: start;
+}
+#roshan-offline p { margin: .65rem 0; }
+#roshan-offline button { margin: .2rem .3rem .2rem 0; }
+#roshan-offline progress { display: block; width: 100%; margin-top: .55rem; }
+@media (max-width: 650px) {
+  #roshan-offline .roshan-offline-panel {
+    position: fixed;
+    left: 1rem;
+    right: 1rem;
+    top: auto;
+    width: auto;
+  }
+}

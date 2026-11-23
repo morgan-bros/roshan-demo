@@ -1,0 +1,15 @@
+{
+  "id": "./Roshan.html",
+  "name": "Roshan Persian Study",
+  "short_name": "Roshan",
+  "description": "Persian vocabulary, pronunciation, and timed reading practice.",
+  "start_url": "./Roshan.html#home",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#191712",
+  "theme_color": "#191712",
+  "icons": [
+    {"src": "assets/roshan-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any"},
+    {"src": "assets/roshan-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any"}
+  ]
+}
