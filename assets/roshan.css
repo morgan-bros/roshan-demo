@@ -1,0 +1,95 @@
+/* Roshan preview: the original Light and Dark rules remain in index.html. */
+:root[data-theme="roshan"]{
+  color-scheme:dark;
+  --bg:#061636;--surface:#0f2440;--surface-2:#142e4c;--line:#385274;--line-strong:#6f8ba8;
+  --ink:#f7f3eb;--ink-2:#d5d6e2;--muted:#bdc1d4;
+  --accent:#ffd153;--accent-ink:#112a45;--accent-soft:#293e55;--accent-soft-ink:#ffe28a;
+  --warn:#f0ca7c;--warn-soft:#423522;--warn-ink:#ffe1a7;
+  --good:#8ed7b2;--good-soft:#233e3a;--bad:#ffb4a5;--bad-soft:#4b2e37;
+  --shadow:0 2px 4px #070a181f,0 14px 38px #070a1833;
+}
+.roshan-theme-label{font-size:.73rem;color:var(--ink-2);font-weight:600}
+#theme{font:inherit;font-size:.82rem;min-height:38px;max-width:108px;padding:6px 9px;border:1px solid var(--line-strong);border-radius:10px;background:var(--surface);color:var(--ink)}
+.top .tools{align-items:center;gap:7px}
+.preview-strip{max-width:1008px;margin:12px auto 0;padding:8px 12px;border:1px solid var(--line);border-radius:12px;background:var(--surface);color:var(--ink-2);display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:.75rem}
+.preview-strip b{color:var(--ink);font-weight:650}
+.preview-strip button{min-height:30px;font-size:.75rem;white-space:nowrap}
+#wallpaper-motion{display:none}
+:root[data-theme="roshan"] #wallpaper-motion{display:inline-flex}
+#roshan-wallpaper,.roshan-welcome{display:none}
+:root[data-theme="roshan"] body{background:var(--bg,#061636);isolation:isolate}
+:root[data-theme="roshan"] #roshan-wallpaper{display:block;position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:-1;background:radial-gradient(ellipse at 76% 25%,var(--rs-wall-glow,#12326a) 0,transparent 60%),linear-gradient(155deg,var(--bg,#061636),var(--rs-wall-mid,#08224e) 65%,var(--rs-wall-end,#051633))}
+/* Sun, halo and rays share SVG coordinates and the fixed horizon anchor. */
+#roshan-wallpaper .wallpaper-scene{position:absolute;right:-65px;top:8vh;width:min(660px,64vw);height:88vh;overflow:visible;color:var(--rs-wallsun,#ffce5d)}
+/* Restore the original fixed, half-hidden background sun; light still moves. */
+#roshan-wallpaper .solar-halo{transform-origin:0px 0px;animation:roshan-halo 14s ease-in-out infinite alternate}
+#roshan-wallpaper .light-ribbons{transform-origin:0px 0px;animation:roshan-rays 192s linear infinite}
+/* Sky additions share the sun's SVG coordinates and stay behind all content. */
+#roshan-wallpaper .sky-star{opacity:.7;animation:roshan-twinkle var(--twinkle-duration,11s) ease-in-out var(--twinkle-delay,0s) infinite}
+#roshan-wallpaper .sky-cloud-one{animation:roshan-cloud-one 98s ease-in-out infinite alternate}
+#roshan-wallpaper .sky-cloud-two{animation:roshan-cloud-two 127s ease-in-out -31s infinite alternate}
+#roshan-wallpaper::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--rs-wall-overlay,#06163635),transparent 65%)}
+@keyframes roshan-halo{from{transform:scale(.88);opacity:.55}to{transform:scale(1.08);opacity:.95}}
+@keyframes roshan-rays{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+@keyframes roshan-dawn{from{opacity:.45;transform:scale(.86)}to{opacity:.98;transform:scale(1.1)}}
+@keyframes roshan-sunrise{from{transform:translateY(9px)}to{transform:translateY(-7px)}}
+@keyframes roshan-glint{from{opacity:.3;transform:translateX(-5px)}to{opacity:.9;transform:translateX(5px)}}
+@keyframes roshan-twinkle{0%,100%{opacity:.45}50%{opacity:1}}
+@keyframes roshan-cloud-one{from{transform:translateX(-18px)}to{transform:translateX(24px)}}
+@keyframes roshan-cloud-two{from{transform:translateX(28px)}to{transform:translateX(-26px)}}
+:root[data-theme="roshan"] .top{background:var(--rs-header-bg,#061838f5);border-color:var(--rs-gold1,#655033)}
+:root[data-theme="roshan"] .mark{background:var(--rs-mark-bg,#0e2a4f);color:var(--rs-base,#ffd153);border:1px solid var(--rs-border,#efbd5380)}
+.mark svg{width:25px;height:28px}
+:root[data-theme="roshan"] .brand b{letter-spacing:.045em}
+:root:is([data-theme="light"],[data-theme="dark"],[data-theme="roshan"]) .roshan-welcome{display:grid;grid-template-columns:minmax(0,1fr) 260px;align-items:center;gap:26px;min-height:290px;margin:0 0 22px;padding:24px 34px;position:relative;overflow:hidden;border:1px solid var(--rs-border,#dbac4d80);border-radius:22px;background:linear-gradient(115deg,var(--rs-welcome-start,#0d2347),var(--rs-welcome-end,#061938) 70%);box-shadow:0 18px 46px #040e2650}
+.roshan-welcome::before{content:"";position:absolute;width:460px;height:460px;right:-100px;top:-85px;border-radius:50%;background:radial-gradient(circle,var(--rs-welcomeGlow,#ffca4733),transparent 65%);pointer-events:none}
+.roshan-wordmark{display:flex;align-items:baseline;flex-wrap:wrap;gap:6px clamp(22px,3.3vw,46px);font:500 clamp(2.6rem,5vw,3.6rem)/1.3 Georgia,"Times New Roman",serif;letter-spacing:.055em;color:var(--rs-base,#ffd153);margin:8px 0 10px}
+.roshan-wordmark bdi{unicode-bidi:isolate;white-space:nowrap}
+.roshan-persian{font-family:var(--fa);font-weight:550;font-size:.9em;letter-spacing:0;line-height:1.5}
+.roshan-subtitle{font-size:clamp(1rem,2vw,1.2rem);font-weight:450;letter-spacing:.025em;margin:0;color:#f5f1e9}
+.roshan-welcome .eyebrow{color:#c1bfd3;font-size:.67rem;letter-spacing:.17em;margin:0 0 10px}
+.roshan-welcome .welcome-detail{font-size:.8rem;color:#bdc1d4;margin:18px 0 0;max-width:32em}
+.roshan-art{width:100%;height:252px;position:relative}
+.roshan-art .dawn-glow{transform-origin:0px 0px;animation:roshan-dawn 10s ease-in-out infinite alternate}
+.roshan-art .home-solar-motion{animation:roshan-sunrise 12s ease-in-out infinite alternate}
+.roshan-art .horizon-glint{animation:roshan-glint 8s ease-in-out infinite alternate}
+:root[data-theme="roshan"] .hero{background:linear-gradient(115deg,var(--rs-hero-start,#122b4a),var(--rs-hero-end,#0f2440) 80%)}
+:root[data-theme="roshan"] .term{box-shadow:0 3px 12px #080b2115}
+:root[data-theme="roshan"] .day.current{border-color:var(--rs-base,#ffd153)}
+:root[data-theme="roshan"] .tag.hit{border:1px solid var(--rs-tagBorder,#b79b5e65)}
+:root[data-theme="roshan"] :is(button,input,select,a,[tabindex]):focus-visible{outline:3px solid var(--rs-focus,#ffe2a0);outline-offset:3px}
+:root[data-theme="roshan"] button:disabled{opacity:.65}
+:root[data-theme="roshan"] select option{background:var(--rs-hero-end,#0f2440);color:#f7f3eb}
+:root[data-theme="roshan"] .map-wk-n.due{color:var(--warn)}
+/* Leave fixed SVG anchor transforms intact when motion is disabled. */
+:root[data-wallpaper="static"] #roshan-wallpaper *,:root[data-wallpaper="static"] .roshan-art *{animation:none;will-change:auto}
+@media(prefers-reduced-motion:reduce){#roshan-wallpaper *,.roshan-art *{animation:none!important;will-change:auto!important}:root[data-theme="roshan"] *{scroll-behavior:auto!important;transition:none!important}}
+@media(max-width:700px){.roshan-theme-label{display:none}.preview-strip{margin:10px 16px 0}.top-inner{gap:7px}:root:is([data-theme="light"],[data-theme="dark"],[data-theme="roshan"]) .roshan-welcome{grid-template-columns:1fr 155px;padding:22px;gap:10px;min-height:230px}.roshan-art{height:205px}.roshan-welcome .welcome-detail{font-size:.75rem}}
+@media(max-width:440px){:root:is([data-theme="light"],[data-theme="dark"],[data-theme="roshan"]) .roshan-welcome{grid-template-columns:1fr 105px;padding:20px 16px;gap:8px}.roshan-art{height:173px}.roshan-wordmark{font-size:2.5rem}.roshan-subtitle{font-size:.88rem}.roshan-welcome .welcome-detail{display:none}.roshan-welcome .eyebrow{font-size:.58rem}.preview-strip{align-items:flex-start}.preview-strip span{max-width:70%}#theme{font-size:.78rem;max-width:91px}}
+/* The header uses the viewport; the study column keeps its original width. */
+.top-inner{max-width:none;width:100%;padding:12px clamp(16px,2.4vw,46px);display:grid;grid-template-columns:max-content max-content minmax(180px,1fr) max-content;grid-template-areas:"brand nav search tools";gap:12px 22px;align-items:center}
+.top .brand{grid-area:brand;min-width:max-content;flex-shrink:0}
+.top .brand b{display:block;overflow:visible;text-overflow:clip;white-space:nowrap}
+.top .nav{grid-area:nav;min-width:0;max-width:100%;margin:0;flex-wrap:wrap;overflow:visible;mask-image:none;-webkit-mask-image:none}
+.top .nav button{flex:0 0 auto;white-space:nowrap}
+.top .search-wrap{grid-area:search;width:100%;min-width:0;max-width:440px;margin:0;justify-self:end}
+.top .tools{grid-area:tools;justify-self:end;flex-wrap:wrap;min-width:0}
+@media(max-width:1320px){.top-inner{grid-template-columns:max-content minmax(180px,1fr) max-content;grid-template-areas:"brand search tools" "nav nav nav";gap:10px 18px}.top .nav{width:100%;justify-content:center}.top .search-wrap{max-width:560px}}
+@media(max-width:700px){.top-inner{grid-template-columns:max-content minmax(0,1fr);grid-template-areas:"brand tools" "search search" "nav nav";padding:10px 12px;gap:9px 12px}.top .brand b{display:block}.top .search-wrap{max-width:none}.top .nav{border-radius:18px;justify-content:flex-start;padding:4px;gap:3px}.top .nav button{padding:.35rem .8rem;min-height:36px}.top .tools{flex-wrap:nowrap}.top .roshan-theme-label{display:none}}
+@media(max-width:340px){.top-inner{grid-template-columns:minmax(0,1fr);grid-template-areas:"brand" "tools" "search" "nav"}.top .tools{justify-self:start}}
+@media print{#roshan-wallpaper,.roshan-welcome,.preview-strip{display:none!important}}
+
+/* Release: the same approved scene is static in Light and Dark. */
+:root:is([data-theme="light"],[data-theme="dark"]) body{isolation:isolate}
+:root:is([data-theme="light"],[data-theme="dark"]) #roshan-wallpaper{display:block;position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:-1;background:linear-gradient(155deg,var(--bg),var(--rs-wall-mid),var(--bg))}
+:root:not([data-theme="roshan"]) #roshan-wallpaper *,:root:not([data-theme="roshan"]) .roshan-art *{animation:none!important;will-change:auto}
+:root:is([data-theme="light"],[data-theme="dark"]) .roshan-subtitle{color:var(--ink)}
+:root:is([data-theme="light"],[data-theme="dark"]) .roshan-welcome :is(.eyebrow,.welcome-detail){color:var(--ink-2)}
+:root:is([data-theme="light"],[data-theme="dark"]){--rs-base:var(--accent);--rs-border:color-mix(in srgb,var(--accent) 45%,transparent);--rs-welcomeGlow:color-mix(in srgb,var(--accent) 12%,transparent);--rs-gold1:color-mix(in srgb,var(--accent) 75%,black);--rs-gold2:color-mix(in srgb,var(--accent) 75%,white);--rs-gold3:var(--accent);--rs-gold4:color-mix(in srgb,var(--accent) 80%,black);--rs-glow1:var(--accent);--rs-glow2:var(--accent);--rs-outline:var(--accent);--rs-marks:var(--accent);--rs-sun:var(--accent);--rs-glint:var(--accent);--rs-stars:var(--accent);--rs-edge:var(--accent);--rs-finial:var(--accent);--rs-wallglow1:var(--accent);--rs-wallglow2:var(--accent);--rs-wallglow3:var(--accent);--rs-rays:var(--accent);--rs-wallsun:var(--accent);--rs-skywarm:var(--accent);--rs-welcome-start:var(--surface-2);--rs-welcome-end:var(--surface)}
+:root[data-theme="light"]{--rs-sky-top:#e6efe9;--rs-sky-mid:#c7dcd1;--rs-frame:#edf2ee;--rs-hill-back:#bdd1c5;--rs-hill-front:#91af9e;--rs-wall-mid:#edf3ef;--rs-wall-overlay:#f4f3ee35}
+:root[data-theme="dark"]{--rs-sky-top:#15281f;--rs-sky-mid:#244d3a;--rs-frame:#121715;--rs-hill-back:#294b37;--rs-hill-front:#1f3a2e;--rs-wall-mid:#192c21;--rs-wall-overlay:#12171535}
+.wallpaper-controls{max-width:1008px;margin:10px auto 0;display:flex;justify-content:flex-end;padding:0 4px}
+.wallpaper-controls button{font-size:.75rem;min-height:30px}
+:root:not([data-theme="roshan"]) .wallpaper-controls{display:none}
+@media(max-width:1040px){.wallpaper-controls{margin-left:16px;margin-right:16px}}
+@media print{#roshan-wallpaper,.roshan-welcome,.wallpaper-controls{display:none!important}}

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <title>Roshan</title>
+  <desc>A gold pointed window framing a sunrise on deep royal blue.</desc>
+  <rect width="512" height="512" rx="106" fill="#061636"/>
+  <g transform="translate(54.4 25) scale(6.3)" fill="none" color="#ffd153">
+    <path d="M10 67V34C10 20 23 12 32 5c9 7 22 15 22 29v33H10Z" stroke="currentColor" stroke-width="3.7"/>
+    <path d="M16 57h32M18 63h28" stroke="currentColor" stroke-width="2.3"/>
+    <path d="M22 53a10 10 0 0 1 20 0" fill="currentColor"/>
+    <path d="M32 35v5M18 40l4 4M46 40l-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+  </g>
+</svg>
